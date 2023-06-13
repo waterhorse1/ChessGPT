@@ -271,10 +271,10 @@ def main(args):
     #data = get_data(args, (preprocess_train, preprocess_val), epoch=start_epoch, tokenizer=get_tokenizer(args.model))
     data = dict()
     data_path = tfds.load("pathtochessmastery", split='train', download=False)
-    data_publishing = tfds.load("chess_publishing", split='train', download=False)
+    #data_publishing = tfds.load("chess_publishing", split='train', download=False)
     data_gameknot = tfds.load("gameknot", split='train', download=False)
     data_lichess = tfds.load("lichess_studies", split='train', download=False)
-    data_megabase = tfds.load("megabase", split='train', download=False)
+    #data_megabase = tfds.load("megabase", split='train', download=False)
     #train_data, val_data = tfds.load("chess_crawl", split=['train[10%:]', 'train[:10%]'], download=False)
     all_data = data_path.concatenate(data_publishing).concatenate(data_gameknot).concatenate(data_lichess).concatenate(data_megabase)
     # Filter out examples without comment
