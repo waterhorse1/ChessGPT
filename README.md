@@ -1,4 +1,5 @@
 # ChessGPT - Bridging Policy Learning and Language Modeling
+The offcial code for the paper: ChessGPT - Bridging Policy Learning and Language Modeling
 
 ## Model and Dataset
 We open source our three models [ChessGPT-Base](https://huggingface.co/Waterhorse/chessgpt-base-v1), [ChessGPT-Chat](https://huggingface.co/Waterhorse/chessgpt-chat-v1) and [ChessCLIP](https://huggingface.co/Waterhorse/ChessCLIP), and our [Chess dataset](https://huggingface.co/Waterhorse/ChessCLIP).
@@ -16,7 +17,7 @@ export PYTHONPATH=$PWD:$PWD/third_party/chessclip/src
 ### ChessCLIP 
 We adopt the code from [open_clip-v2.9.3](https://github.com/mlfoundations/open_clip) for our training code of ChessCLIP. To reproduce our training, here are two procedures:
 #### Generate dataset using tfds
-Run tfds build for pathtochessmastery, pgnlib, gameknot and lichess_studies. Note that the processing of pgnlib needs fasttext's model, you can download it from their [official website](https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin) and modify the [path](https://github.com/waterhorse1/ChessGPT/blob/dc99b5b1b9977d266828809b51316f9b961d22ff/chess_ai/datasets/tfds/pgn_base.py#L44).
+Run tfds build for `pathtochessmastery`, `pgnlib`, `gameknot` and `lichess_studies`. Note that the processing of pgnlib needs fasttext's model, you can download it from their [official website](https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin) and modify the [path](https://github.com/waterhorse1/ChessGPT/blob/dc99b5b1b9977d266828809b51316f9b961d22ff/chess_ai/datasets/tfds/pgn_base.py#L44). These 4 sources are free dataset and you can also add the source of `megabase` and `chess_publishing` if you buy them.
 ```bash
 tfds build --imports chess_ai.datasets.tfds --overwrite pathtochessmastery --manual_dir ./chessclip_data/annotated_pgn \
 --register_checksums '--beam_pipeline_options=runner=DirectRunner,direct_num_workers=8,direct_running_mode=multi_processing'
