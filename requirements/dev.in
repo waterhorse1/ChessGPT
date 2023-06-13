@@ -1,0 +1,7 @@
+-r main.in
+pytest
+pytest-xdist
+black
+isort
+pylint
+pre-commit

@@ -1,0 +1,17 @@
+-r open_clip.in
+tensorflow
+absl-py
+numpy
+python-chess
+apache_beam
+zstandard
+tensorflow_datasets
+pycld2
+chardet
+gdown
+ipywidgets
+fasttext
+kenlm
+emoji==1.6.1
+sentencepiece
+ipykernel
