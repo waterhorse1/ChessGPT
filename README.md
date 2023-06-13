@@ -16,8 +16,14 @@ export PYTHONPATH=$PWD:$PWD/third_party/chessclip/src
 ### ChessCLIP 
 We adopt the code from [open_clip-v2.9.3](https://github.com/mlfoundations/open_clip) for our training code of ChessCLIP. To reproduce our training, here are two procedures:
 #### Generate dataset using tfds
+Run tfds build for pathtochessmastery, pgnlib, gameknot and lichess_studies. Note that the processing of pgnlib needs fasttext's model, you can download it from their [official website](https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin) and modify the [path](https://github.com/waterhorse1/ChessGPT/blob/dc99b5b1b9977d266828809b51316f9b961d22ff/chess_ai/datasets/tfds/pgn_base.py#L44).
+```bash
+tfds build --imports chess_ai.datasets.tfds --overwrite pathtochessmastery --manual_dir ./chessclip_data/annotated_pgn \
+--register_checksums '--beam_pipeline_options=runner=DirectRunner,direct_num_workers=8,direct_running_mode=multi_processing'
+```
 
 #### ChessCLIP training
+After tfds building for all 4 sources, run the following code to train ChessCLIP:
 ```bash
 cd chessclip/open_clip/src
 torchrun --nproc_per_node 8 -m training.main_chess --model chessclip-quickgelu
@@ -35,8 +41,10 @@ After running the base-training, we can conduct further instrustion-tuning based
 2. After the dataset preparation, run chess_ai/train/sft_traning/train.sh.
 
 ## Evaluation
+Refer to `./eval` for evaluation code of ChessCLIP and ChessGPT.
 
 ## License
+Will be updated soon.
 
 ## Citation
 Will be updated soon.
