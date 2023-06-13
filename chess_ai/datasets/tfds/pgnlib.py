@@ -26,7 +26,7 @@ class Pgnlib(pgn_base.PGNDatasetBuilder):
         return pgn_base.build_info(
             self,
             pgn_base.DatasetConfig(
-                homepage="https://www.chesspublishing.com/subscribe.html"
+                homepage="https://www.angelfire.com/games3/smartbridge/"
             ),
         )
 

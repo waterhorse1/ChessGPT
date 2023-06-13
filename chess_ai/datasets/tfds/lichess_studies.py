@@ -126,7 +126,7 @@ class LichessStudies(pgn_base.PGNDatasetBuilder):
         return pgn_base.build_info(
             self,
             pgn_base.DatasetConfig(
-                homepage="Lichess"
+                homepage="https://lichess.org/study"
             ),
         )
 
@@ -135,7 +135,7 @@ class LichessStudies(pgn_base.PGNDatasetBuilder):
 
         # TODO(yl): This requires the raw data archive to have a fixed name.
         # Consider configuring this via a `BuilderConfig`.
-        data_dir = dl_manager.manual_dir / "lichess_studies_clean"
+        data_dir = dl_manager.manual_dir / "lichess_studies"
         return {
             "train": self._generate_examples(data_dir),
         }

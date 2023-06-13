@@ -27,7 +27,7 @@ class Pathtochessmastery(pgn_base.PGNDatasetBuilder):
     def _split_generators(self, dl_manager: tfds.download.DownloadManager):
         """Returns SplitGenerators."""
 
-        data_dir = dl_manager.manual_dir / "pathtochessmastery_clean"
+        data_dir = dl_manager.manual_dir / "pathtochessmastery"
 
         return {
             "train": self._generate_examples(data_dir),

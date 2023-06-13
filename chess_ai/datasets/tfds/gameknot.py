@@ -17,7 +17,7 @@ class Gameknot(pgn_base.PGNDatasetBuilder):
         return pgn_base.build_info(
             self,
             pgn_base.DatasetConfig(
-                homepage="https://www.angelfire.com/games3/smartbridge/"
+                homepage="https://gameknot.com/list_annotated.pl?u=all"
             ),
         )
 
@@ -26,7 +26,7 @@ class Gameknot(pgn_base.PGNDatasetBuilder):
 
         # TODO(yl): This requires the raw data archive to have a fixed name.
         # Consider configuring this via a `BuilderConfig`.
-        data_dir = dl_manager.manual_dir / "gameknot_translated"
+        data_dir = dl_manager.manual_dir / "gameknot"
 
         return {
             "train": self._generate_examples(data_dir),
