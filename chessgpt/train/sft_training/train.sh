@@ -1,4 +1,4 @@
-CUDA_VISIBLE_DEVICES=1,2,3,4,5,6,7 torchrun --nproc_per_node=7 --master_port=20001 ./train.py \
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --nproc_per_node=8 --master_port=20001 ./train.py \
     --model_name_or_path /nvme2/redpajama_chess_v2/  \
     --data_path /nvme2/conversation_data_process/all_conversation.jsonl \
     --bf16 True \
