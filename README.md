@@ -1,11 +1,11 @@
 # ChessGPT - Bridging Policy Learning and Language Modeling
-The offcial code for the paper: ChessGPT - Bridging Policy Learning and Language Modeling
+The official code for the paper: [ChessGPT - Bridging Policy Learning and Language Modeling](https://arxiv.org/abs/2306.09200).
 
 ## Model and Dataset
 We open source our three models [ChessGPT-Base](https://huggingface.co/Waterhorse/chessgpt-base-v1), [ChessGPT-Chat](https://huggingface.co/Waterhorse/chessgpt-chat-v1) and [ChessCLIP](https://huggingface.co/Waterhorse/ChessCLIP), and our [Chess dataset](https://huggingface.co/datasets/Waterhorse/chess_data).
 
 ## Installation
-1. Create a Python virtual environment with the method of your choice. The locked dependences is generated for Python 3.8.10, but python beyond 3.8 like python 3.9/3.10 are also available.
+1. Create a Python virtual environment with the method of your choice. The locked dependencies are generated for Python 3.8.10, but python beyond 3.8 like python 3.9/3.10 are also available.
 2. Install dependencies by running `pip install -r requirements/dev.txt`.
 3. Setup environment variables with the following commands.
 ```bash
@@ -33,7 +33,7 @@ torchrun --nproc_per_node 8 -m training.main_chess --model chessclip-quickgelu
 ### ChessGPT
 #### Base-training
 1. Firstly Run all pipleines in chess_ai/data/pipelines to form all formatted Jsonl files.
-2. Run dataset tokenization and merging/shuffling to form a fully tokenized dataset. Checkout the README there.
+2. Run dataset tokenization and merging/shuffling to form a fully tokenized dataset. Check out the README there.
 3. For basemodel finetuning, run chess_ai/train/clm_traning/finetune_pp_peft_trainer.sh.
 
 #### Instruction-tuning
