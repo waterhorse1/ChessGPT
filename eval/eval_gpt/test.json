@@ -1,0 +1,26 @@
+{
+    "canary": [""],
+    "name": "test",
+    "description": "test",
+    "keywords": ["test"],
+    "preferred_score": "exact_str_match",
+    "metrics": ["exact_str_match"],
+    "fen":1,
+    "task_prefix": "Could you produce the Forsyth–Edwards Notation (FEN) that corresponds to the provided SAN based move list of the chess game:",
+    "example_input_prefix": "\n",
+    "example_output_prefix": "? The resulting FEN representation is ",
+    "examples": [
+        {
+            "input": "d2d4 g7g6 c2c4 f8g7 e2e4 g8f6 b1c3 e8g8 c1e3 f6e8 f2f3 b8c6 d1d2 e7e6 h2h4 d7d5 c4d5 e6d5 c3d5 e8f6 d5f6 g7f6 e4e5 f6g7 f1b5 c8d7 a1c1 a7a6 b5c4 b7b5 c4b3 d7f5 c1c6 d8d7 c6c5 c7c6 g1e2 a8d8 e2g3 f5e6 b3e6 d7",
+            "target": "3r1rk1/3q1pbp/p1p1B1p1/1pR1P3/3P3P/4BPN1/PP1Q2P1/4K2R b K - 0 21"
+        },
+        {
+            "input": "e2e4 g7g6 d2d4 f8g7 c1e3 g8f6 f2f3 d7d6 d1",
+            "target": "rnbqk2r/ppp1ppbp/3p1np1/8/3PP3/4BP2/PPP3PP/RN1QKBNR w KQkq - 0 5"
+        },
+        {
+            "input": "f2f4 d7d5 g1",
+            "target": "rnbqkbnr/ppp1pppp/8/3p4/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2"
+        }
+    ]
+}
