@@ -93,9 +93,5 @@ def evaluate_pgn_match(data):
     stderr_value = mean_stderr(score_list)
     print(f"{value}, {stderr_value}")
 
-data = json.load(open('../eval_task/chess_opening_generation.json'))
-# ../eval_task/chess_opening_generation.json'
-# ../eval_task/chess_state_value_multi_choice_2_nob.json'
-# ../eval_task/chess_annotation_nob.json'
-# ../eval_task/chess_opening_mc.json'
+data = json.load(open('../eval_task/chess_opening/chess_opening_generation.json'))
 evaluate_pgn_match(data)

@@ -92,5 +92,5 @@ def evaluate_control_action(data, device="cpu"):
     stderr_value = mean_stderr(score_list)
     print(f"{value}, {stderr_value}")
 
-data_checkmate_in_one = json.load(open('../eval_task/checkmate_in_one.json'))
+data_checkmate_in_one = json.load(open('../eval_task/checkmate_in_one/checkmate_in_one.json'))
 evaluate_control_action(data_checkmate_in_one, device=device)
