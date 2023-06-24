@@ -42,7 +42,7 @@ After running the base-training, we can conduct further instrustion-tuning based
 2. After the dataset preparation, run chess_ai/train/sft_traning/train.sh.
 
 ## Evaluation
-Refer to `./eval` for evaluation code of ChessCLIP and ChessGPT.
+Refer to `./eval` for evaluation dataset and code of ChessCLIP and ChessGPT.
 
 ## License
 Will be updated soon.
