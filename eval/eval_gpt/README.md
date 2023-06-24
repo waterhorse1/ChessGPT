@@ -30,7 +30,7 @@ python main.py     --model hf-causal   \
 ```
 
 ## Chess State Tracking 
-Copy evaluition json files to bigbench tasks folder.
+Copy evaluation json files to bigbench tasks folder.
 ```bash
 cp -r ../eval_task/chess_state_tracking/* lm-evaluation-harness/lm_eval/datasets/bigbench_resources/
 ```
@@ -54,7 +54,7 @@ python main.py     --model hf-causal   \
 
 ## Board State Tracking
 
-Copy evaluition json files to bigbench tasks folder.
+Copy evaluation json files to bigbench tasks folder.
 ```bash
 cp -r ../eval_task/board_state_tracking/* lm-evaluation-harness/lm_eval/datasets/bigbench_resources/
 ```
@@ -66,7 +66,7 @@ There are 6 tasks for board state tracking:
 - bigbench_real_med_task_p2f
 - bigbench_real_short_task_p2f
 
-Run the evluation, for example:
+Run the evaluation, for example:
 ```bash
 cd lm-evaluation-harness
 python main.py     --model hf-causal   \
@@ -74,10 +74,72 @@ python main.py     --model hf-causal   \
 --tasks bigbench_real_long_task_u2f  \
 --device cuda:0
 ```
+## Chess state value
 
+Copy evaluation json files to bigbench tasks folder.
+```bash
+cp -r ../eval_task/chess_state_value/* lm-evaluation-harness/lm_eval/datasets/bigbench_resources/
+```
+
+There are several variants:
+- chess_state_value_multi_choice_2.json (prompts with { suffix, multi-choice for base model)
+- chess_state_value_multi_choice_2_nob.json (prompts without { suffix, multi-choice for base model)
+- chess_state_value_multi_choice_sft.json (prompts with { suffix, exact multi-choice for ChessGPT-Chat)
+- chess_state_value_multi_choice_sft_nob.json (prompts without { suffix, multi-choice for ChessGPT-Chat)
+
+Run the evaluation, for example:
+```bash
+cd lm-evaluation-harness
+python main.py     --model hf-causal   \
+--model_args pretrained=/path/to/your/llm-model/ \
+--tasks bigbench_chess_state_value_multi_choice_2  \
+--device cuda:0
+```
+## Chess annotation
+
+Copy evaluation json files to bigbench tasks folder.
+```bash
+cp -r ../eval_task/chess_annotation/* lm-evaluation-harness/lm_eval/datasets/bigbench_resources/
+```
+The variants are the same with Chess state value variations.
+
+## Chess opening
+
+Copy evaluation json files to bigbench tasks folder.
+```bash
+cp -r ../eval_task/chess_opening/* lm-evaluation-harness/lm_eval/datasets/bigbench_resources/
+```
+
+There are several variants:
+- chess_opening_generation.json (Opening2PGN for base model)
+- chess_opening_generation_sft.json (Opening2PGN for ChessGPT-Chat)
+- chess_opening_mc.json (PGN2Opening for base model)
+- chess_opening_mc_sft.json (PGN2Opening for ChessGPT-Chat)
+
+## Checkmate in one
+
+Copy evaluation json files to bigbench tasks folder.
+```bash
+cp -r ../eval_task/checkmate_in_one/* lm-evaluation-harness/lm_eval/datasets/bigbench_resources/
+```
+
+There are several variants:
+- checkmate_in_one_comment_esm/mc.json (prompts with { suffix, exact string match/multi-choice for base model)
+- checkmate_in_one_esm/mc.json (prompts without { suffix, exact string match/multi-choice for base model)
+- checkmate_in_one_comment_sft_esm/mc.json (prompts with { suffix, exact string match/multi-choice for ChessGPT-Chat)
+- checkmate_in_one_sft_esm/mc.json (prompts without { suffix, exact string match/multi-choice for ChessGPT-Chat)
+
+Run the evaluation, for example:
+```bash
+cd lm-evaluation-harness
+python main.py     --model hf-causal   \
+--model_args pretrained=/path/to/your/llm-model/ \
+--tasks bigbench_checkmate_in_one_comment_esm  \
+--device cuda:0
+```
 ## General Policy Evaluation 
 
-Copy evaluition json files to bigbench tasks folder.
+Copy evaluation json files to bigbench tasks folder.
 ```bash
 cp -r ../eval_task/general_policy/* lm-evaluation-harness/lm_eval/datasets/bigbench_resources/
 ```
@@ -92,7 +154,7 @@ There are 8 tasks for general policy:
 - bigbench_chess_win_rate_black_gap1000
 - bigbench_chess_win_rate_black_gap2000
 
-Run the evluation, for example:
+Run the evaluation, for example:
 ```bash
 cd lm-evaluation-harness
 python main.py     --model hf-causal   \
