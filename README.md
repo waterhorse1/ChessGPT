@@ -48,9 +48,13 @@ Refer to `./eval` for evaluation dataset and code of ChessCLIP and ChessGPT.
 ChessGPT/CLIP are released under the Apache License, Version 2.0.
 
 ## Citation
+If you find ChessGPT useful, please cite it in your publications.
+
+```bibtex
 @article{feng2023chessgpt,
   title={ChessGPT: Bridging Policy Learning and Language Modeling},
   author={Feng, Xidong and Luo, Yicheng and Wang, Ziyan and Tang, Hongrui and Yang, Mengyue and Shao, Kun and Mguni, David and Du, Yali and Wang, Jun},
   journal={arXiv preprint arXiv:2306.09200},
   year={2023}
 }
+```
