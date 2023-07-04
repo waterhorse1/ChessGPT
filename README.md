@@ -45,7 +45,12 @@ After running the base-training, we can conduct further instrustion-tuning based
 Refer to `./eval` for evaluation dataset and code of ChessCLIP and ChessGPT.
 
 ## License
-Will be updated soon.
+ChessGPT/CLIP are released under the Apache License, Version 2.0.
 
 ## Citation
-Will be updated soon.
+@article{feng2023chessgpt,
+  title={ChessGPT: Bridging Policy Learning and Language Modeling},
+  author={Feng, Xidong and Luo, Yicheng and Wang, Ziyan and Tang, Hongrui and Yang, Mengyue and Shao, Kun and Mguni, David and Du, Yali and Wang, Jun},
+  journal={arXiv preprint arXiv:2306.09200},
+  year={2023}
+}
