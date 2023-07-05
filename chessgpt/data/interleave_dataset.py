@@ -36,7 +36,6 @@ def main():
         'redpajama': 1,
         "chess_modeling": 1
     }
-    # "/lustre/S/wufan/xidong_data/ChessGPT/training_data/"
     main_dir = args.data_path
     all_dataset_list = []
     for sd in sub_dir_dict.keys():
