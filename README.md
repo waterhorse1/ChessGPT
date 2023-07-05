@@ -32,20 +32,52 @@ torchrun --nproc_per_node 8 -m training.main_chess --model chessclip-quickgelu
 
 ### ChessGPT
 #### Base-training
-1. Firstly Run all pipleines in chess_ai/data/pipelines to form all formatted Jsonl files.
-2. Run dataset tokenization and merging/shuffling to form a fully tokenized dataset. Check out the README there.
-3. For basemodel finetuning, run chess_ai/train/clm_traning/finetune_pp_peft_trainer.sh.
+After downloading data from chessgpt_data, run the following code for conducting tokenization on all datasets,
+```bash
+cd chessgpt/data
+python3 interleave_dataset.py --tokenizer_path ./tokenizer_path --data_path ./data_path --save_path ./save_path --max_seq_length 1024
+```
+After preparing the tokenized dataset, modify the hyperparameters and run base training:
+```bash
+cd chessgpt/train/clm_training
+sh chess_ai/train/clm_traning/finetune_pp_peft_trainer.sh
+```
 
 #### Instruction-tuning
-After running the base-training, we can conduct further instrustion-tuning based one instruction data or conversation data.
-1. For dataset preparation, Check chess_ai/data/sft_data/README.md for prepare conversation data from different sources.
+After running the base training, we can conduct further instruction-tuning based on instruction data or conversation data.
+1. For dataset preparation, merge all data sources to one jsonl file.
 2. After the dataset preparation, run chess_ai/train/sft_traning/train.sh.
-
+   
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --nproc_per_node=8 --master_port=20001 ./train.py \
+    --model_name_or_path your_chess_base_model_path  \
+    --data_path the_aggregated_one_jsonl_file_path \
+    --bf16 True \
+    --output_dir output_file \
+    --num_train_epochs 3 \
+    --per_device_train_batch_size 4 \
+    --per_device_eval_batch_size 4 \
+    --gradient_accumulation_steps 8 \
+    --evaluation_strategy "no" \
+    --save_strategy "steps" \
+    --save_steps 2000 \
+    --save_total_limit 10 \
+    --learning_rate 2e-5 \
+    --weight_decay 0. \
+    --warmup_ratio 0.03 \
+    --lr_scheduler_type "cosine" \
+    --logging_steps 1 \
+    --fsdp "full_shard auto_wrap" \
+    --fsdp_transformer_layer_cls_to_wrap 'GPTNeoXLayer' \
+    --tf32 True \
+    --model_max_length 1024 \
+    --gradient_checkpointing True \
+```
 ## Evaluation
 Refer to `./eval` for evaluation dataset and code of ChessCLIP and ChessGPT.
 
 ## License
-ChessGPT/CLIP are released under the Apache License, Version 2.0.
+The code of ChessGPT/CLIP are released under the Apache License, Version 2.0.
 
 ## Citation
 If you find ChessGPT useful, please cite it in your publications.
