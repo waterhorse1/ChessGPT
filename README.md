@@ -2,7 +2,7 @@
 The official code for the paper: [ChessGPT - Bridging Policy Learning and Language Modeling](https://arxiv.org/abs/2306.09200).
 
 ## Contribution
-we welcome any contribution, especially on chess related dataset towards the development of the next-generation model, ChessGPT-V2. For related matters, please contact xidong.feng.20@ucl.ac.uk.
+We welcome any contribution, especially on chess related dataset towards the development of the next-generation model, ChessGPT-V2. For related matters, please contact xidong.feng.20@ucl.ac.uk.
 
 ## Model and Dataset
 We open source our three models [ChessGPT-Base](https://huggingface.co/Waterhorse/chessgpt-base-v1), [ChessGPT-Chat](https://huggingface.co/Waterhorse/chessgpt-chat-v1) and [ChessCLIP](https://huggingface.co/Waterhorse/ChessCLIP), and our [Chess dataset](https://huggingface.co/datasets/Waterhorse/chess_data).
