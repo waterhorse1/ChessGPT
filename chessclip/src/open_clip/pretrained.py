@@ -164,7 +164,7 @@ _PRETRAINED = {
     "RN50x64": _RN50x64,
     "ViT-B-32": _VITB32,
     "ViT-B-32-quickgelu": _VITB32_quickgelu,
-    "ViT-B-32-quickgelu-chess": _VITB32_quickgelu,
+    "chessclip-quickgelu": _VITB32_quickgelu,
     "ViT-B-16": _VITB16,
     "ViT-B-16-plus-240": _VITB16_PLUS_240,
     "ViT-L-14": _VITL14,
