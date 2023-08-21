@@ -14,6 +14,8 @@ We open source our three models [ChessGPT-Base](https://huggingface.co/Waterhors
 ```bash
 export PYTHONPATH=$PWD:$PWD/third_party/chessclip/src
 ```
+## Visualization
+We offer a ChessCLIP visualization [demo](https://github.com/waterhorse1/ChessGPT/blob/main/chessclip_demo.ipynb) to show its capability.
 
 ## Training
 
