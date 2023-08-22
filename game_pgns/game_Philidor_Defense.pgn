@@ -1,0 +1,13 @@
+[Event "game"]
+[Site "http://gameknot.com/"]
+[Date "2019.10.24"]
+[Round "-"]
+[White "gamegold10"]
+[Black "freddie2988"]
+[Result "0-1"]
+[WhiteElo "713"]
+[BlackElo "1201"]
+[TimeControl "3 days per move"]
+
+1. e4 {Normal} e5 {Normal} 2. Nf3 {Knight} d6 {Pawn wall}   0-1
+
