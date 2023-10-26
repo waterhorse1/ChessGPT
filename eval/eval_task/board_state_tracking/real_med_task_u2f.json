@@ -15,7 +15,7 @@
         "exact_str_match"
     ],
     "fen":1,
-    "task_prefix": "Could you produce the Forsyth–Edwards Notation (FEN) that corresponds to the provided SAN based move list of the chess game: ",
+    "task_prefix": "Could you produce the Forsyth–Edwards Notation (FEN) that corresponds to the provided Universal Chess Interface (UCI) based move list of the chess game: ",
     "example_input_prefix": "\n",
     "example_output_prefix": " ? The resulting FEN representation is",
     "examples": [
